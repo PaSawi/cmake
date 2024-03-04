@@ -27,9 +27,9 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 
 add_executable(${PROJECT_NAME}-ut test/greeter.ut.cpp)
-target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib Catch2::Catch2WithMain)
 target_compile_options(${PROJECT_NAME}-ut PRIVATE ${FLAGS})
 target_compile_features(${PROJECT_NAME}-ut PRIVATE cxx_std_17)
+target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib Catch2::Catch2WithMain)
 
 enable_testing()
 add_test(NAME someTests COMMAND ${PROJECT_NAME}-ut)
